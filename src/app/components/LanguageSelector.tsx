@@ -1,26 +1,19 @@
 "use client";
-import { useState } from "react"
+import { useLanguage } from "../contexts/LanguageContext";
 
 export default function LanguageSelector(){
-    const [language, setLanguage] = useState("br");
-
-    const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        const selectedLang = e.target.value;
-        setLanguage(selectedLang);
-
-        //Futura Lógica Aqui!
-    };
+    const {language, setLanguage} = useLanguage();
 
     return(
         <div className="relative inline-block mt-2">
             <select 
                 id="linguagem"
                 value={language}
-                onChange={handleLanguageChange}
+                onChange={(e) => setLanguage(e.target.value as "pt" | "en")}
                 className="appearance-none min-w-[180px] bg-transparent text-white font-chocolates text-[16px] px-2 py-0.5 rounded-[10px] cursor-pointer outline-none border-2 border-white focus:ring-offset-transparent"
             >
-            <option className="bg-primary-1 text-white" value="br">🇧🇷 PT-BR</option>
-            <option className="bg-primary-1 text-white" value="us">🇺🇸 EN-US</option>
+            <option className="bg-primary-1 text-white" value="pt">🇧🇷 PT-BR</option>
+            <option className="bg-primary-1 text-white" value="en">🇺🇸 EN-US</option>
             </select>
 
             <div className="pointer-events-none absolute inset-y-0 right-1 flex items-center">

@@ -14,6 +14,8 @@ interface CardProjetosProps {
   imagem: string;
   tecnologias: TecnologiaProjeto[];
   quantidadeTecnologia: string;
+  subtitulo: string;
+  subtitulo2: string;
 }
 
 export default function CardProjetos({
@@ -22,6 +24,8 @@ export default function CardProjetos({
   imagem,
   tecnologias,
   quantidadeTecnologia,
+ subtitulo,
+ subtitulo2
 }: CardProjetosProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -50,7 +54,7 @@ export default function CardProjetos({
 
         <div className="bg-white h-[2px] w-3/5 rounded-[2px]" />
         <p className="text-white font-chocolates font-semibold text-[22px] mt-4">
-          Tecnologias
+          {subtitulo}
         </p>
 
         <div className="flex flex-wrap w-full gap-4 justify-center mt-2">
@@ -79,6 +83,7 @@ export default function CardProjetos({
         descricao={descricao}
         imagem={imagem}
         tecnologias={tecnologias}
+        subtitulo2={subtitulo2}
       />
     </>
   );

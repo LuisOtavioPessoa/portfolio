@@ -33,21 +33,22 @@ import LogoCleanCode from "./components/LogoTecnologia/LogoCleanCode";
 import LogoScrum from "./components/LogoTecnologia/LogoScrum";
 import LogoGit from "./components/LogoTecnologia/LogoGit";
 import emailjs from "@emailjs/browser";
-
-//Publick Key = dLlWzRFRL-RwhP_2M
-//service_id = service_lgxbbhb
-// template = template_xati3c8
+import { useLanguage } from "./contexts/LanguageContext";
+import { translations } from "./translations";
 
 export default function Home() {
 
   const[active, setActive] = useState("");
+  const {language} = useLanguage();
+  const current = translations[language] || translations.pt;
+  const t = translations[language];
 
   const navBarItems = [
-    {id: "inicio", label: "Início"},
-    {id: "sobre", label: "Sobre"},
-    {id: "habilidades", label: "Habilidades"},
-    {id: "projetos", label: "Projetos"},
-    {id: "contatos", label: "Contatos"},
+    {id: "inicio", label: t.nav.inicio},
+    {id: "sobre", label: t.nav.sobre},
+    {id: "habilidades", label: t.nav.habilidades},
+    {id: "projetos", label: t.nav.projetos},
+    {id: "contatos", label: t.nav.contatos},
   ];
 
   const schema = z.object({
@@ -160,17 +161,15 @@ const onSubmit = async (data: FormData) => {
           <div className="bg-transparent">
               <div className="pt-30 pl-30">
                 <h1 className="text-white font-altone font-bold text-[58px]">Luís Otávio</h1>
-                <p className="relative text-primary-6 font-chocolates text-[30px] font-semibold [text-shadow:0_0_6px_#5191DB]  pr-4 after:content-[''] after:absolute after:right-65 after:top-6 after:-translate-y-6 after:w-[6px] after:h-[75%] after:bg-[#3B76BB]  ">Desenvolvedor Front End</p>
-                <p className="text-white font-creato text-[22px] mt-2 max-w-[500px]">Desenvolvedor com foco em desenvolvimento 
-                de interfaces responsivas, versionamentos e 
-                boas práticas de código limpo.</p>
+                <p className="relative text-primary-6 font-chocolates text-[30px] font-semibold [text-shadow:0_0_6px_#5191DB]  pr-4 after:content-[''] after:absolute after:right-65 after:top-6 after:-translate-y-6 after:w-[6px] after:h-[75%] after:bg-[#3B76BB]  ">{t.inicio.cargo}</p>
+                <p className="text-white font-creato text-[22px] mt-2 max-w-[500px]">{t.inicio.titulo}</p>
 
                 <a 
                   href="/curriculo"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                <button className="text-white font-chocolates bg-primary-6 mt-12 rounded-[20px] px-6 py-4 hover:bg-primary-3 hover:font-bold hover:scale-110 transition-all duration-300 w-[150px] cursor-pointer">Ver Currículo</button>
+                <button className="text-white font-chocolates bg-primary-6 mt-12 rounded-[20px] px-6 py-4 hover:bg-primary-3 hover:font-bold hover:scale-110 transition-all duration-300 w-[150px] cursor-pointer">{t.inicio.curriculo}</button>
                 </a>
                 
                 <div className="flex flex-row mt-8 gap-6">
@@ -216,33 +215,24 @@ const onSubmit = async (data: FormData) => {
       </div>
 
       <div id="sobre" className= "w-full min-h-screen bg-transparent flex flex-col items-center">
-        <h1 className=" text-white text-[40px] font-altone font-bold ">Sobre Mim</h1>
+        <h1 className=" text-white text-[40px] font-altone font-bold ">{t.sobre.secao.titulo}</h1>
         <div className="bg-primary-6 h-[5px] w-1/5 rounded-[5px] mt-3 "></div>
 
         <div className="w-3/4 flex justify-start mt-20">
         <SecaoSobre
-          titulo="Apresentação"
-          texto1="Sou um desenvolvedor focado em criar interfaces modernas, funcionais e responsivas."
-          texto2="Busco sempre aprender novas tecnologias e aprimorar a experiência do usuário."
-          height={90}
+          section="apresentacao"
+          height={520}
         />
         </div>
 
         <SecaoSobre
-          titulo="Experiência profissional"
-          subtitulo="Desenvolvedor Front End"
-          subtitulo2="Fábrica de Software"
-          texto1="Atuei em projetos que envolveram desenvolvimento de interfaces, integração de APIs e boas práticas de código limpo."
-          texto2="Tenho experiência com React, TypeScript, Next.js e Tailwind CSS."
-          height={220}
+          section="experiencia"
+          height={580}
         />
 
         <SecaoSobre
-          titulo="Formação"
-          subtitulo="Análise e Desenvolvimento de Sistemas"
-          subtitulo2="Centro Universitário UNIPÊ"
-          texto1="Minha formação..."
-          height={150}
+          section="formacao"
+          height={260}
         />
 
       </div>
@@ -250,7 +240,7 @@ const onSubmit = async (data: FormData) => {
       <div 
         id="habilidades" 
         className="w-full min-h-screen bg-transparent flex flex-col items-center pt-24 sm:pt-28 md:pt-32 lg:pt-40">
-        <h1 className=" text-white text-[40px] font-altone font-bold ">Habilidades</h1>
+        <h1 className=" text-white text-[40px] font-altone font-bold ">{t.habilidades.titulo}</h1>
         <div className="bg-primary-6 h-[5px] w-1/5 rounded-[5px] mt-3 "></div>
 
         <div className="flex justify-center w-full mt-20">
@@ -311,15 +301,13 @@ const onSubmit = async (data: FormData) => {
       <div 
         id="projetos" 
         className="w-full min-h-screen bg-transparent flex flex-col items-center pt-24 sm:pt-28 md:pt-32 lg:pt-40">
-        <h1 className=" text-white text-[40px] font-altone font-bold ">Projetos</h1>
+        <h1 className=" text-white text-[40px] font-altone font-bold ">{t.projetos.tituloSecao}</h1>
         <div className="bg-primary-6 h-[5px] w-1/5 rounded-[5px] mt-3 "></div>
 
         <div className="flex justify-center w-full mt-20 grid-cols-2 gap-20">
           <CardProjetos
-             titulo="Plataforma F360"
-              descricao={[
-              "Aplicação web desenvolvida para estruturar e modernizar a gestão da Fábrica de Software da Unipê.",
-              "A solução oferece controle administrativo completo sobre alunos, projetos, workshops, palestras e imersões, substituindo processos manuais e descentralizados."]} 
+             titulo={t.projetos.lista[0].titulo}
+              descricao={t.projetos.lista[0].descricao} 
              imagem="/images/f360-projeto.png"
              tecnologias={[
               {nome: "React.js", cor: "#5DE1EA1F", borda: "border-[#5DE1EAE5]"},
@@ -328,13 +316,13 @@ const onSubmit = async (data: FormData) => {
               {nome: "Tailwind CSS", cor: "#00ACC11A", borda: "border-[#00ACC1E5]"},
              ]}
              quantidadeTecnologia="2"
+             subtitulo={t.projetos.tecnologia}
+             subtitulo2={t.projetos.tecnologia2}
           />
          
           <CardProjetos
-             titulo="API Pokemon TCG"
-             descricao={[
-              "Aplicação web que consome dados da API oficial do Pokémon TCG para exibir cartas, realizar buscas por nome ou tipo, e simular a abertura de pacotes com 6 cartas aleatórias.", 
-              "O projeto demonstra domínio em consumo de APIs RESTful, manipulação dinâmica de dados e criação de interfaces interativas com foco na experiência do usuário."]}
+             titulo={t.projetos.lista[1].titulo}
+             descricao={t.projetos.lista[1].descricao}
              imagem="/images/pokemonapi-projeto.png"
              tecnologias={[
               {nome: "React.js", cor: "#5DE1EA1F", borda: "border-[#5DE1EAE5]" },
@@ -345,6 +333,8 @@ const onSubmit = async (data: FormData) => {
               {nome: "API RESTful", cor: "#54B5F21A", borda: "border-[#54B5F2E5]" },
              ]}
              quantidadeTecnologia="4"
+             subtitulo= {t.projetos.tecnologia}
+             subtitulo2={t.projetos.tecnologia2}
           />
 
         </div>
@@ -354,7 +344,7 @@ const onSubmit = async (data: FormData) => {
         id="contatos" 
         className="w-full min-h-screen bg-transparent flex flex-col items-center pt-24 sm:pt-28 md:pt-32 lg:pt-40"
       >
-        <h1 className=" text-white text-[40px] font-altone font-bold ">Entre em contato</h1>
+        <h1 className=" text-white text-[40px] font-altone font-bold ">{t.contatos.titulo}</h1>
         <div className="bg-primary-6 h-[5px] w-1/5 rounded-[5px] mt-3 "></div>
 
         <form
@@ -364,28 +354,28 @@ const onSubmit = async (data: FormData) => {
 
           <InputField
           id="nome"
-          label="Nome"
+          label={t.contatos.nome}
           register={register("nome")}
           error= {errors.nome}
           />
 
           <InputField
           id="email"
-          label="Email"
+          label={t.contatos.email}
           register={register("email")}
           error= {errors.email}
           />
 
           <InputField
           id="assunto"
-          label="Assunto"
+          label={t.contatos.assunto}
           register={register("assunto")}
           error= {errors.assunto}
           />
 
           <TextAreaField
           id="mensagem"
-          label="Mensagem"
+          label={t.contatos.mensagem}
           register={register("mensagem")}
           error={errors.mensagem}
         />
@@ -394,7 +384,7 @@ const onSubmit = async (data: FormData) => {
           type="submit"
           className="bg-primary-6 text-white text-[20px] font-chocolates rounded-[20px] border-[1px] border-[#2C2C2C] py-3  hover:bg-primary-3 hover:font-bold hover:scale-110 transition-all duration-300 cursor-pointer"
         >
-          Enviar
+          {t.contatos.enviar}
         </button>
 
         </form>
@@ -427,7 +417,7 @@ const onSubmit = async (data: FormData) => {
 
         </div>
 
-        <p className="text-white font-chocolates text-[18px] pt-10 mb-10">© 2025 Luís Otávio. Todos os direitos reservados.</p>
+        <p className="text-white font-chocolates text-[18px] pt-10 mb-10">{t.contatos.direitos}</p>
 
       </div>
     </main>

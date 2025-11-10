@@ -29,9 +29,19 @@
     return(
       <div 
          className= {` bg-[#3B76BB1A] border-[#F5F5F580] border-2 rounded-[30px]  p-8  shadow-[4px_4px_4px_0_#3B76BB] ${tamanhoCard[tamanho]} flex flex-col`}>
-         <p className="text-[#3B76BB] text-[36px] font-altone font-bold [text-shadow:0_0_9px_#3B76BB] mb-10">
-            {titulo}
-         </p>
+<p className="text-[#3B76BB] text-[36px] font-altone font-bold [text-shadow:0_0_6px_#5191DB] mb-10 fade-letters">
+  {titulo.split("").map((letra, i) => (
+    <span
+      key={i}
+      style={{ animationDelay: `${i * 0.1}s` }}
+    >
+      {letra === " " ? "\u00A0" : letra}
+    </span>
+  ))}
+</p>
+
+
+
 
             <div className="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] gap-x-4 gap-y-10 justify-items-center">
             

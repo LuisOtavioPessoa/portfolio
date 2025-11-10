@@ -25,6 +25,24 @@
   font-family: var(--font-creato);
 }
 
+@keyframes fadeLetter {
+  0%, 100% {
+    opacity: 0.4;
+    text-shadow: 0 0 0px #5191DB;
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 6px #5191DB;
+  }
+}
+
+.fade-letters span {
+  display: inline-block;
+  animation: fadeLetter 3s infinite;
+}
+
+
+
 @layer base {
     /* FONT ALTONE TRIAL */
   @font-face {

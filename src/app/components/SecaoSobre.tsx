@@ -1,30 +1,34 @@
 "use client";
 import React from "react";
+import { useLanguage } from "../contexts/LanguageContext";
+import { translations } from "../translations";
+import { SecaoSobreData } from "../types/SecaoSobreType";
 
 interface SecaoSobreProps {
-  titulo: string;
-  subtitulo?: string;
-  subtitulo2?: string;
-  texto1: string;
-  texto2?: string;
-  texto3?: string;
+  section: "apresentacao" | "experiencia" | "formacao";
   height?: number;
 }
 
 export default function SecaoSobre({
-  titulo,
-  subtitulo,
-  subtitulo2,
-  texto1,
-  texto2,
-  texto3,
+  section,
   height = 150,
 }: SecaoSobreProps) {
+
+  const {language} = useLanguage();
+  const data = translations[language].sobre[section];
+
   return (
     <div className="w-3/4 flex flex-col items-start relative mb-8">
    
-      <p className="text-primary-6 font-altone font-bold text-[32px] [text-shadow:0_0_9px_#3B76BB] mb-4">
-        {titulo}
+      <p className="text-primary-6 font-altone font-bold text-[32px] [text-shadow:0_0_9px_#3B76BB] mb-4 fade-letters">
+        {data.titulo.split("").map((letra, i) => (
+          <span
+            key={i}
+            style={{ animationDelay: `${i * 0.1}s` }}
+          >
+            {letra === " " ? "\u00A0" : letra}
+          </span>
+        ))}
       </p>
 
       <div className="flex relative">
@@ -47,31 +51,42 @@ export default function SecaoSobre({
 
         <div className="flex flex-col mt-2">
 
-          {subtitulo && (
+          {data.subtitulo && (
           <p className="text-white text-[22px] leading-relaxed font-chocolates font-semibold">
-            {subtitulo}
+            {data.subtitulo}
           </p>
           )}
 
-          {subtitulo2 && (
-          <p className="text-white text-[20px] leading-relaxed font-chocolates font-semibold mb-6 mt-3">
-            {subtitulo2}
-          </p>
+          {data.subtitulo2 && (
+            <div className="flex justify-between items-center mb-6 mt-3 w-full md:max-w-[650px]">
+              <p className="text-white text-[20px] leading-relaxed font-chocolates font-semibold">
+                {data.subtitulo2}
+              </p>
+              {data.tempoExperiencia && (
+                <p className="text-white text-[16px] font-chocolates">{data.tempoExperiencia}</p>
+              )}
+            </div>
           )}
 
           <p className="text-white text-[18px] leading-relaxed font-creato max-w-[90%] md:max-w-[650px]">
-            {texto1}
+            {data.texto1}
           </p>
 
-          {texto2 && (
+          {data.texto2 && (
             <p className="text-white text-[18px] leading-relaxed mt-4 font-creato max-w-[90%] md:max-w-[650px]">
-              {texto2}
+              {data.texto2}
             </p>
           )}
 
-          {texto3 && (
+          {data.texto3 && (
             <p className="text-white text-[18px] leading-relaxed mt-4 font-creato max-w-[90%] md:max-w-[650px]">
-              {texto3}
+              {data.texto3}
+            </p>
+          )}
+
+          {data.texto4 && (
+            <p className="text-white text-[18px] leading-relaxed mt-4 font-creato max-w-[90%] md:max-w-[650px]">
+              {data.texto4}
             </p>
           )}
 

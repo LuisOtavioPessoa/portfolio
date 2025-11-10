@@ -14,6 +14,7 @@ interface ModalCardProjetosProps {
   descricao: string[];
   imagem: string;
   tecnologias: TecnologiaProjeto[];
+  subtitulo2: string;
 }
 
 export default function ModalCardProjetos({
@@ -23,6 +24,7 @@ export default function ModalCardProjetos({
   descricao,
   imagem,
   tecnologias,
+  subtitulo2
 }: ModalCardProjetosProps) {
   if (!isOpen) return null;
 
@@ -73,7 +75,7 @@ export default function ModalCardProjetos({
             </div>
 
             <p className="text-white font-chocolates font-semibold text-[24px] ">
-              Tecnologias Utilizadas
+              {subtitulo2}
             </p>
 
             <div className="bg-white h-[2px] w-2/5 mx-auto rounded-[2px]" />
