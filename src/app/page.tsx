@@ -130,7 +130,7 @@ const onSubmit = async (data: FormData) => {
       <ParticlesBackground />
 
       <div className="flex items-center-safe justify-center bg-primary-2 min-h-[65px] w-full fixed top-0 left-0 z-50">
-        <div className="flex justify-evenly items-center-safe max-w-5xl w-full px-6">
+        <div className="flex justify-evenly items-center-safe max-w-5xl w-full px-6 max-md:justify-between max-md:px-4 max-sm:gap-2 max-sm:text-[14px]">
           {navBarItems.map((item) => (
           <p
             key={item.id}
@@ -140,7 +140,7 @@ const onSubmit = async (data: FormData) => {
             }}
             className={`relative cursor-pointer font-chocolates text-[20px] transition-all duration-500
               after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px]
-              after:bg-[#3B76BB] after:transition-all after:duration-500
+              after:bg-[#3B76BB] after:transition-all after:duration-500 max-md:text-[17px] max-sm:text-[14px]
               ${
                 active === item.id
                   ? "text-[#3B76BB] font-semibold after:w-full"
@@ -153,58 +153,90 @@ const onSubmit = async (data: FormData) => {
         </div>
       </div>
 
-      <div className="w-full flex justify-end px-6 pt-[80px]">
+      <div className="w-full flex justify-end px-6 pt-[80px]
+                      max-lg:px-4 max-lg:pt-[80px] 
+                      max-md:px-4 max-md:pt-[60px] max-sm:pt-[70px] max-sm:justify-center">
         <LanguageSelector/>
       </div>
       
-      <div id="inicio" className="grid grid-cols-2 w-full min-h-screen">
+      <div id="inicio" className="grid grid-cols-2 w-full min-h-screen 
+                                  max-lg:gap-4 max-lg:pt-[40px] max-lg:min-h-[60vh]
+                                  max-sm:grid-cols-1 max-sm:pl-6 max-sm:pt-[60px] max-sm:mb-[100px]
+      ">
           <div className="bg-transparent">
-              <div className="pt-30 pl-30">
-                <h1 className="text-white font-altone font-bold text-[58px]">Luís Otávio</h1>
-                <p className="relative text-primary-6 font-chocolates text-[30px] font-semibold [text-shadow:0_0_6px_#5191DB]  pr-4 after:content-[''] after:absolute after:right-65 after:top-6 after:-translate-y-6 after:w-[6px] after:h-[75%] after:bg-[#3B76BB]  ">{t.inicio.cargo}</p>
-                <p className="text-white font-creato text-[22px] mt-2 max-w-[500px]">{t.inicio.titulo}</p>
+              <div className="pt-30 pl-30
+                               max-lg:pt-20 max-lg:pl-30 max-lg:pr-4
+                              max-sm:pt-6 max-sm:pl-4
+              ">
+                <h1 className="text-white font-altone font-bold text-[58px]
+                                 max-lg:text-[44px] max-sm:text-[34px]">  
+                  Luís Otávio
+                </h1>
+                <p className="text-primary-6 font-chocolates text-[30px] font-semibold max-lg:text-[24px] max-sm:text-[20px] [text-shadow:0_0_6px_#5191DB]">
+                  {t.inicio.cargo}
+                </p>
+                <p className="text-white font-creato text-[22px] mt-2 max-w-[500px]
+                              max-lg:text-[18px] max-sm:text-[16px] max-sm:max-w-[90%]">
+                  {t.inicio.titulo}
+                </p>
 
                 <a 
                   href="/curriculo"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                <button className="text-white font-chocolates bg-primary-6 mt-12 rounded-[20px] px-6 py-4 hover:bg-primary-3 hover:font-bold hover:scale-110 transition-all duration-300 w-[150px] cursor-pointer">{t.inicio.curriculo}</button>
+                  <button 
+                    className="text-white font-chocolates bg-primary-6 mt-12 rounded-[20px] px-6 py-4 hover:bg-primary-3 hover:font-bold hover:scale-110 transition-all duration-300 w-[150px] cursor-pointer
+                    max-lg:w-[130px] max-lg:py-3 max-lg:text-[15px]
+                    max-sm:mt-8 max-sm:w-[120px]"
+                  >
+                    {t.inicio.curriculo}
+                  </button>
                 </a>
                 
-                <div className="flex flex-row mt-8 gap-6">
+                <div className="flex flex-row mt-8 gap-6 max-lg:mt-6 max-sm:mt-4 max-sm:gap-4">
                   <LogoLinkedIn/>
                   <LogoGitHub/>
                 </div>
               </div>
           </div>
 
-          <div className="pt-20 pl-30">
+          <div className="pt-20 pl-30 
+                          max-lg:pt-10 max-lg:pl-10
+                          max-sm:pt-8 max-sm:pl-10 max-sm:justify-center ">
  
-            <div className="relative w-[350px] h-[320px] rounded-[15px] shadow-[4px_4px_4px_0_#3B76BB]">
+            <div className="relative w-[350px] h-[320px] rounded-[15px] shadow-[4px_4px_4px_0_#3B76BB]
+                            max-lg:w-[300px] max-lg:h-[270px]
+                            max-sm:w-[260px] max-sm:h-[230px]
+            ">
               
               <div
                 className="absolute inset-0 bg-primary-2
                 [clip-path:polygon(120px_0%,100%_0%,100%_100%,0%_100%,0%_120px)]
-                flex flex-col items-start justify-start px-4 gap-4 rounded-[15px]"
+                flex flex-col items-start justify-start px-4 gap-4 rounded-[15px]
+                 max-sm:px-4 max-sm:gap-4 max-sm:py-1"
               >
-                <div className="flex items-center gap-2 mt-30">
-                  <IoLocationOutline className="text-[40px] text-white" />
-                  <p className="text-white text-[20px] font-chocolates m-2">
+                <div className="flex items-center gap-2 mt-30 
+                                max-lg:mt-24 ">
+                  <IoLocationOutline className="text-[40px] text-white max-lg:text-[32px]" />
+                  <p className="text-white text-[20px] font-chocolates m-2 
+                                max-lg:text-[17px] max-sm:text-[15px] max-sm:m-1">
                     João Pessoa, PB, Brasil
                   </p>
                 </div>
 
                 <div className="flex items-center gap-2">
-                  <MdOutlineEmail className="text-[40px] text-white" />
-                  <p className="text-white text-[20px] font-chocolates m-2">
+                  <MdOutlineEmail className="text-[40px] text-white max-lg:text-[32px]" />
+                  <p className="text-white text-[20px] font-chocolates m-2 
+                                  max-lg:text-[17px] max-sm:text-[15px] max-sm:m-1">
                     otaviopessoa999@gmail.com
                   </p>
                 </div>
 
                 <div className="flex items-center gap-2">
-                  <FiPhone className="text-[40px] text-white" />
-                  <p className="text-white text-[20px] font-chocolates m-2">
+                  <FiPhone className="text-[40px] text-white max-lg:text-[32px]" />
+                  <p className="text-white text-[20px] font-chocolates m-2 
+                                  max-lg:text-[17px] max-sm:text-[15px] max-sm:m-1">
                     (81) 99140-8370
                   </p>
                 </div>
