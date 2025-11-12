@@ -247,25 +247,29 @@ const onSubmit = async (data: FormData) => {
       </div>
 
       <div id="sobre" className= "w-full min-h-screen bg-transparent flex flex-col items-center">
-        <h1 className=" text-white text-[40px] font-altone font-bold ">{t.sobre.secao.titulo}</h1>
-        <div className="bg-primary-6 h-[5px] w-1/5 rounded-[5px] mt-3 "></div>
+        <h1 className=" text-white text-[40px] font-altone font-bold 
+                      max-lg:text-[34px] max-md:text-[30px] max-sm:text-[26px] ">
+                      {t.sobre.secao.titulo}
+      </h1>
+        <div className="bg-primary-6 h-[5px] w-1/5 rounded-[5px] mt-3 max-md:w-1/4 max-sm:w-1/3"></div>
 
-        <div className="w-3/4 flex justify-start mt-20">
+        <div className="w-3/4 flex justify-start mt-20
+                        max-lg:justify-center max-lg:mt-14 max-md:mt-10 max-sm:mt-8 max-sm:justify-center">
         <SecaoSobre
           section="apresentacao"
-          height={520}
+          height={530}
         />
         </div>
 
-        <SecaoSobre
-          section="experiencia"
-          height={580}
-        />
+  <div className="w-3/4 flex justify-start 
+                  max-lg:justify-center">
+    <SecaoSobre section="experiencia" height={580} />
+  </div>
 
-        <SecaoSobre
-          section="formacao"
-          height={260}
-        />
+  <div className="w-3/4 flex justify-start 
+                  max-lg:justify-center">
+    <SecaoSobre section="formacao" height={260} />
+  </div>
 
       </div>
 
@@ -376,12 +380,14 @@ const onSubmit = async (data: FormData) => {
         id="contatos" 
         className="w-full min-h-screen bg-transparent flex flex-col items-center pt-24 sm:pt-28 md:pt-32 lg:pt-40"
       >
-        <h1 className=" text-white text-[40px] font-altone font-bold ">{t.contatos.titulo}</h1>
+        <h1 className="text-white text-[28px] sm:text-[34px] md:text-[40px] font-altone font-bold">
+          {t.contatos.titulo}
+        </h1>
         <div className="bg-primary-6 h-[5px] w-1/5 rounded-[5px] mt-3 "></div>
 
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col gap-8 w-full max-w-[450px] pt-30"
+          className="flex flex-col gap-6 sm:gap-8 w-full max-w-[400px] sm:max-w-[450px] pt-20 sm:pt-30"
         >
 
           <InputField
@@ -414,7 +420,7 @@ const onSubmit = async (data: FormData) => {
         
         <button
           type="submit"
-          className="bg-primary-6 text-white text-[20px] font-chocolates rounded-[20px] border-[1px] border-[#2C2C2C] py-3  hover:bg-primary-3 hover:font-bold hover:scale-110 transition-all duration-300 cursor-pointer"
+          className="bg-primary-6 text-white text-[16px] sm:text-[18px] md:text-[20px] font-chocolates rounded-[20px] border-[1px] border-[#2C2C2C] py-2 sm:py-3 hover:bg-primary-3 hover:font-bold hover:scale-110 transition-all duration-300 cursor-pointer"
         >
           {t.contatos.enviar}
         </button>
@@ -449,7 +455,9 @@ const onSubmit = async (data: FormData) => {
 
         </div>
 
-        <p className="text-white font-chocolates text-[18px] pt-10 mb-10">{t.contatos.direitos}</p>
+        <p className="text-white font-chocolates text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] pt-10 mb-10">
+          {t.contatos.direitos}
+        </p>
 
       </div>
     </main>
