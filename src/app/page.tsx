@@ -276,7 +276,9 @@ const onSubmit = async (data: FormData) => {
       <div 
         id="habilidades" 
         className="w-full min-h-screen bg-transparent flex flex-col items-center pt-24 sm:pt-28 md:pt-32 lg:pt-40">
-        <h1 className=" text-white text-[40px] font-altone font-bold ">{t.habilidades.titulo}</h1>
+        <h1 className=" text-white text-[40px] font-altone font-bold 
+max-lg:text-[34px] max-md:text-[30px] max-sm:text-[26px] ">{t.habilidades.titulo}</h1>
+
         <div className="bg-primary-6 h-[5px] w-1/5 rounded-[5px] mt-3 "></div>
 
         <div className="flex justify-center w-full mt-20">
@@ -337,10 +339,12 @@ const onSubmit = async (data: FormData) => {
       <div 
         id="projetos" 
         className="w-full min-h-screen bg-transparent flex flex-col items-center pt-24 sm:pt-28 md:pt-32 lg:pt-40">
+          
         <h1 className=" text-white text-[40px] font-altone font-bold ">{t.projetos.tituloSecao}</h1>
         <div className="bg-primary-6 h-[5px] w-1/5 rounded-[5px] mt-3 "></div>
 
-        <div className="flex justify-center w-full mt-20 grid-cols-2 gap-20">
+        <div className="flex justify-center w-full mt-20 gap-20
+      max-sm:flex-col max-sm:items-center">
           <CardProjetos
              titulo={t.projetos.lista[0].titulo}
               descricao={t.projetos.lista[0].descricao} 
@@ -378,7 +382,7 @@ const onSubmit = async (data: FormData) => {
 
       <div 
         id="contatos" 
-        className="w-full min-h-screen bg-transparent flex flex-col items-center pt-24 sm:pt-28 md:pt-32 lg:pt-40"
+        className="w-full min-h-screen bg-transparent flex flex-col items-center pt-24 sm:pt-28 md:pt-20 lg:pt-40"
       >
         <h1 className="text-white text-[28px] sm:text-[34px] md:text-[40px] font-altone font-bold">
           {t.contatos.titulo}
