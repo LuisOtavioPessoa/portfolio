@@ -1,4 +1,3 @@
-// src/app/types/particles.d.ts
 declare module "particles.js";
 
 declare global {

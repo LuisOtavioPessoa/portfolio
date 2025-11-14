@@ -2,7 +2,7 @@
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoLocationOutline } from "react-icons/io5";
 import { MdOutlineEmail } from "react-icons/md";
 import { FiPhone } from "react-icons/fi";
@@ -41,7 +41,7 @@ export default function Home() {
   const[active, setActive] = useState("");
   const {language} = useLanguage();
   const current = translations[language] || translations.pt;
-  const t = translations[language];
+  const t = translations[language] || translations.pt;
 
   const navBarItems = [
     {id: "inicio", label: t.nav.inicio},
@@ -54,19 +54,19 @@ export default function Home() {
   const schema = z.object({
     nome: z
       .string()
-      .min(1, {message: 'Preenchimento obrigatório'})
-      .regex(/^[A-Za-zÀ-ÿ\s]+$/, {message: "O nome não pode conter números"}),
+      .min(1, {message: t.contatos.erros.obrigatorio})
+      .regex(/^[A-Za-zÀ-ÿ\s]+$/, {message: t.contatos.erros.nomeInvalido}),
     email: z
       .string()
-      .min(1, {message: "Preenchimento obrigatório"})
-      .email({message: "Digite um email válido"}),
+      .min(1, {message: t.contatos.erros.obrigatorio})
+      .email({message: t.contatos.erros.emailInvalido}),
     assunto: z
       .string()
-      .min(1, {message: "Preenchimento obrigatório"})
-      .max(100, {message: "Máximo de caracteres"}),
+      .min(1, {message: t.contatos.erros.obrigatorio})
+      .max(100, {message: t.contatos.erros.maxCaracteres}),
     mensagem: z
       .string()
-      .min(1, {message: "Mensagem obrigatória"})
+      .min(1, {message: t.contatos.erros.mensagemObrigatoria})
   });
 
   type FormData = z.infer<typeof schema>
@@ -169,13 +169,14 @@ const onSubmit = async (data: FormData) => {
                               max-sm:pt-6 max-sm:pl-4
               ">
                 <h1 className="text-white font-altone font-bold text-[58px]
-                                 max-lg:text-[44px] max-sm:text-[34px]">  
+                              max-lg:text-[44px] max-sm:text-[34px]">  
                   Luís Otávio
                 </h1>
-                <p className="text-primary-6 font-chocolates text-[30px] font-semibold max-lg:text-[24px] max-sm:text-[20px] [text-shadow:0_0_6px_#5191DB]">
+                <p className=" 
+                text-primary-6 font-chocolates text-[30px] font-semibold max-lg:text-[24px] max-sm:text-[20px] [text-shadow:0_0_6px_#5191DB]">
                   {t.inicio.cargo}
                 </p>
-                <p className="text-white font-creato text-[22px] mt-2 max-w-[500px]
+                <p className=" text-white font-creato text-[22px] mt-2 max-w-[500px]
                               max-lg:text-[18px] max-sm:text-[16px] max-sm:max-w-[90%]">
                   {t.inicio.titulo}
                 </p>
@@ -186,7 +187,7 @@ const onSubmit = async (data: FormData) => {
                   rel="noopener noreferrer"
                 >
                   <button 
-                    className="text-white font-chocolates bg-primary-6 mt-12 rounded-[20px] px-6 py-4 hover:bg-primary-3 hover:font-bold hover:scale-110 transition-all duration-300 w-[150px] cursor-pointer
+                    className=" text-white font-chocolates bg-primary-6 mt-12 rounded-[20px] px-6 py-4 hover:bg-primary-3 hover:font-bold hover:scale-110 transition-all duration-300 w-[150px] cursor-pointer
                     max-lg:w-[130px] max-lg:py-3 max-lg:text-[15px]
                     max-sm:mt-8 max-sm:w-[120px]"
                   >
@@ -194,7 +195,7 @@ const onSubmit = async (data: FormData) => {
                   </button>
                 </a>
                 
-                <div className="flex flex-row mt-8 gap-6 max-lg:mt-6 max-sm:mt-4 max-sm:gap-4">
+                <div className=" flex flex-row mt-8 gap-6 max-lg:mt-6 max-sm:mt-4 max-sm:gap-4">
                   <LogoLinkedIn/>
                   <LogoGitHub/>
                 </div>
@@ -247,7 +248,7 @@ const onSubmit = async (data: FormData) => {
       </div>
 
       <div id="sobre" className= "w-full min-h-screen bg-transparent flex flex-col items-center">
-        <h1 className=" text-white text-[40px] font-altone font-bold 
+        <h1 className="text-white text-[40px] font-altone font-bold 
                       max-lg:text-[34px] max-md:text-[30px] max-sm:text-[26px] ">
                       {t.sobre.secao.titulo}
       </h1>

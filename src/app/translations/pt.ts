@@ -73,12 +73,21 @@ export const pt = {
         titulo: "Habilidades",
     },
     contatos: {
-        titulo: "Entre em contato",
-        nome: "Nome",
-        email: "Email",
-        assunto: "Assunto",
-        mensagem: "Mensagem",
-        enviar: "Enviar",
-        direitos: "© 2025 Luís Otávio. Todos os direitos reservados."
-    }
+    titulo: "Entre em contato",
+    nome: "Nome",
+    email: "Email",
+    assunto: "Assunto",
+    mensagem: "Mensagem",
+    enviar: "Enviar",
+    direitos: "© 2025 Luís Otávio. Todos os direitos reservados.",
+    erros: {
+      obrigatorio: "Preenchimento obrigatório",
+      nomeInvalido: "O nome não pode conter números",
+      emailInvalido: "Digite um email válido",
+      maxCaracteres: "Máximo de caracteres atingido",
+      mensagemObrigatoria: "Mensagem obrigatória",
+    },
+  }
+
+
 }; 

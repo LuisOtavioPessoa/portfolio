@@ -20,7 +20,22 @@ interface Translations {
 
   habilidades: Record<string,string>;
 
-  contatos: Record<string,string>;
+    contatos: {
+    titulo: string;
+    nome: string;
+    email: string;
+    assunto: string;
+    mensagem: string;
+    enviar: string;
+    direitos: string;
+    erros: {
+      obrigatorio: string;
+      nomeInvalido: string;
+      emailInvalido: string;
+      maxCaracteres: string;
+      mensagemObrigatoria: string;
+    };
+  };
 
   projetos: {
     tituloSecao: string;
@@ -28,6 +43,8 @@ interface Translations {
     tecnologia2: string;
     lista: ProjetoData[];
   };
+
+  
 }
 
 export const translations: Record<"pt" | "en", Translations> = { pt, en };

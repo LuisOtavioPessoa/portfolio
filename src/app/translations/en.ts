@@ -73,12 +73,22 @@ export const en = {
         titulo: "Skills",
     },
     contatos: {
-        titulo: "Get in touch",
-        nome: "Name",
-        email: "Email",
-        assunto: "Subject",
-        mensagem: "Message",
-        enviar: "Send",
-        direitos: "© 2025 Luís Otávio. All rights reserved."
-    }
+    titulo: "Get in touch",
+    nome: "Name",
+    email: "Email",
+    assunto: "Subject",
+    mensagem: "Message",
+    enviar: "Send",
+    direitos: "© 2025 Luís Otávio. All rights reserved.",
+    erros: {
+      obrigatorio: "Required field",
+      nomeInvalido: "Name cannot contain numbers",
+      emailInvalido: "Enter a valid email",
+      maxCaracteres: "Maximum number of characters reached",
+      mensagemObrigatoria: "Message is required",
+    },
+  },
+
+
+    
 };
