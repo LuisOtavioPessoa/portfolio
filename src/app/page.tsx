@@ -32,78 +32,73 @@ import LogoMVC from "./components/LogoTecnologia/LogoMVC";
 import LogoCleanCode from "./components/LogoTecnologia/LogoCleanCode";
 import LogoScrum from "./components/LogoTecnologia/LogoScrum";
 import LogoGit from "./components/LogoTecnologia/LogoGit";
-import emailjs from "@emailjs/browser";
 import { useLanguage } from "./contexts/LanguageContext";
 import { translations } from "./translations";
 
 export default function Home() {
 
-  const[active, setActive] = useState("");
-  const {language} = useLanguage();
-  const current = translations[language] || translations.pt;
-  const t = translations[language] || translations.pt;
+const [active, setActive] = useState("");
+const { language } = useLanguage();
+const t = translations[language] || translations.pt;
 
-  const navBarItems = [
-    {id: "inicio", label: t.nav.inicio},
-    {id: "sobre", label: t.nav.sobre},
-    {id: "habilidades", label: t.nav.habilidades},
-    {id: "projetos", label: t.nav.projetos},
-    {id: "contatos", label: t.nav.contatos},
-  ];
+const navBarItems = [
+  { id: "inicio", label: t.nav.inicio },
+  { id: "sobre", label: t.nav.sobre },
+  { id: "habilidades", label: t.nav.habilidades },
+  { id: "projetos", label: t.nav.projetos },
+  { id: "contatos", label: t.nav.contatos },
+];
 
-  const schema = z.object({
-    nome: z
-      .string()
-      .min(1, {message: t.contatos.erros.obrigatorio})
-      .regex(/^[A-Za-zÀ-ÿ\s]+$/, {message: t.contatos.erros.nomeInvalido}),
-    email: z
-      .string()
-      .min(1, {message: t.contatos.erros.obrigatorio})
-      .email({message: t.contatos.erros.emailInvalido}),
-    assunto: z
-      .string()
-      .min(1, {message: t.contatos.erros.obrigatorio})
-      .max(100, {message: t.contatos.erros.maxCaracteres}),
-    mensagem: z
-      .string()
-      .min(1, {message: t.contatos.erros.mensagemObrigatoria})
+const schema = z.object({
+  nome: z
+    .string()
+    .min(1, { message: t.contatos.erros.obrigatorio })
+    .regex(/^[A-Za-zÀ-ÿ\s]+$/, { message: t.contatos.erros.nomeInvalido }),
+  email: z
+    .string()
+    .min(1, { message: t.contatos.erros.obrigatorio })
+    .email({ message: t.contatos.erros.emailInvalido }),
+  assunto: z
+    .string()
+    .min(1, { message: t.contatos.erros.obrigatorio })
+    .max(100, { message: t.contatos.erros.maxCaracteres }),
+  mensagem: z
+    .string()
+    .min(1, { message: t.contatos.erros.mensagemObrigatoria }),
+});
+
+type FormData = z.infer<typeof schema>;
+
+const {
+  register,
+  handleSubmit,
+  formState: { errors },
+} = useForm<FormData>({
+  resolver: zodResolver(schema),
+});
+
+
+async function onSubmit(data: FormData) {
+  const res = await fetch("/api/sendEmail", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      nome: data.nome,
+      email: data.email,
+      assunto: data.assunto,
+      mensagem: data.mensagem,
+    }),
   });
 
-  type FormData = z.infer<typeof schema>
+  const resposta = await res.json();
+  console.log("Resposta:", resposta);
 
-  const{
-      register,
-      handleSubmit,
-      formState: { errors },
-  } = useForm<FormData>({
-    resolver: zodResolver(schema),
-  });
-
-const onSubmit = async (data: FormData) => {
-  try {
-    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
-    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
-
-    const res = await emailjs.send(
-      serviceId,
-      templateId,
-      {
-        from_name: data.nome,
-        from_email: data.email,
-        subject: data.assunto,
-        message: data.mensagem,
-      },
-      publicKey
-    );
-
-    console.log("Email enviado:", res.status, res.text);
+  if (res.ok) {
     alert("Mensagem enviada com sucesso!");
-  } catch (error) {
-    console.error("Erro ao enviar email:", error);
-    alert("Erro ao enviar mensagem. Tente novamente mais tarde.");
+  } else {
+    alert("Falha ao enviar a mensagem: " + (resposta.error || "Erro desconhecido."));
   }
-};
+}
 
     const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
