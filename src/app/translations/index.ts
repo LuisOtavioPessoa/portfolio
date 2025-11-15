@@ -1,6 +1,6 @@
 import { pt } from "./pt";
 import { en } from "./en";
-import { SecaoSobreData } from "../types/SecaoSobreType";
+import { SecaoSobreData } from "../../types/SecaoSobreType";
 
 interface ProjetoData {
   titulo: string;
