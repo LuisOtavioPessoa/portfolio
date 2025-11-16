@@ -305,7 +305,7 @@ max-lg:text-[34px] max-md:text-[30px] max-sm:text-[26px] ">{t.habilidades.titulo
             />
 
             <CardTecnologias
-              titulo="Dados"
+              titulo={t.habilidades.cards.dados}
               tamanho="pequeno"
               tecnologias={[
               { nome: "MySQL", imagem: <LogoSQL/>, cor: "#ED8F3CCC", shadow: "hover:shadow-[0_0_80px_0_#ED8F3CCC]"},
@@ -317,7 +317,7 @@ max-lg:text-[34px] max-md:text-[30px] max-sm:text-[26px] ">{t.habilidades.titulo
 
         <div className="flex justify-center w-full mt-10">
           <CardTecnologias
-            titulo="Outros"
+            titulo={t.habilidades.cards.outros}
             tamanho="grande"
             tecnologias= {[
             { nome: "RESTful APIs", imagem: <LogoRestfulAPI/>, cor: "#54B5F2CC", shadow: "hover:shadow-[0_0_80px_0_#54B5F2CC]"},

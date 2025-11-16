@@ -71,6 +71,10 @@ export const en = {
     },
     habilidades: {
         titulo: "Skills",
+        cards: {
+            dados: "Data",
+            outros: "Others"
+        }
     },
     contatos: {
     titulo: "Get in touch",

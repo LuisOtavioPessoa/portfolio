@@ -18,7 +18,13 @@ interface Translations {
 
   sobre: Record<"apresentacao" | "experiencia" | "formacao" | "secao", SecaoSobreData>;
 
-  habilidades: Record<string,string>;
+  habilidades: {
+    titulo: string;
+    cards: {
+      dados: string;
+      outros: string;
+    };
+  };
 
     contatos: {
     titulo: string;
