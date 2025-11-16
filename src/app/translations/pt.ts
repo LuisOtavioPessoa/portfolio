@@ -31,13 +31,13 @@ export const pt = {
             titulo: "Experiência profissional",
             subtitulo: "Desenvolvedor Front End",
             subtitulo2: "Estágio Fábrica de Software",
-            tempoExperiencia: "Março 2025 - até o momento",
+            tempoExperiencia: "Março 2025 - Agosto 2025",
             texto1: 
-                "Atuo no desenvolvimento da Plataforma F360, uma aplicação web criada para modernizar e centralizar a gestão da Fábrica de Software da Unipê, atendendo alunos, instrutores, empresas parceiras e administradores. Trabalho principalmente no Front-End, desenvolvendo interfaces administrativas e operacionais com React, TypeScript, Next.js e TailwindCSS, seguindo boas práticas de componentização, responsividade e versionamento.",
+                "Atuei no desenvolvimento da Plataforma F360, uma aplicação web criada para modernizar e centralizar a gestão da Fábrica de Software da Unipê, atendendo alunos, instrutores, empresas parceiras e administradores. Trabalhei principalmente no Front-End, desenvolvendo interfaces administrativas e operacionais com React, TypeScript, Next.js e TailwindCSS, seguindo boas práticas de componentização, responsividade e versionamento.",
             texto2: 
-                "Sou responsável pela criação das telas de cadastro de participantes e empresas, substituindo formulários manuais por uma experiência digital moderna e automatizada. Também desenvolvo painéis administrativos de gerenciamento de palestras e workshops, com recursos completos de criação, edição, exclusão e filtragem de eventos, além de uma tela de controle de usuários para visualização, alocação e conversão de imersionistas e extensionistas.",
+                "Fui responsável pela criação das telas de cadastro de participantes e empresas, substituindo formulários manuais por uma experiência digital moderna e automatizada. Também desenvolvi painéis administrativos de gerenciamento de palestras e workshops, com recursos completos de criação, edição, exclusão e filtragem de eventos, além de uma tela de controle de usuários para visualização, alocação e conversão de imersionistas e extensionistas.",
            texto3: 
-                "Durante o projeto, participo ativamente das cerimônias ágeis, como dailies, plannings e reviews, colaborando com a equipe para garantir a entrega contínua de funcionalidades e aprimoramento da plataforma.",
+                "Durante o projeto, participei ativamente das cerimônias ágeis, como dailies, plannings e reviews, colaborando com a equipe para garantir a entrega contínua de funcionalidades e o aprimoramento da plataforma."
         },
         formacao: {
             titulo: "Formação",

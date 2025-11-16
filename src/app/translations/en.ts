@@ -31,13 +31,13 @@ export const en = {
           titulo: "Professional Experience",
           subtitulo: "Front-End Developer",
           subtitulo2: "Internship at a Fábrica de Software",
-          tempoExperiencia: "March 2025 - Present",
+          tempoExperiencia: "March 2025 - August 2025",
           texto1:
-              "I’m currently working on the F360 Platform, a web application designed to modernize and centralize the management of Unipê’s Software Factory, serving students, instructors, partner companies, and administrators. My main focus is on Front-End development, building administrative and operational interfaces using React, TypeScript, Next.js, and TailwindCSS, while following best practices for componentization, responsiveness, and version control.",
+              "I worked on the development of the F360 Platform, a web application created to modernize and centralize the management of Unipê’s Software Factory, serving students, instructors, partner companies, and administrators. I focused primarily on Front-End development, building administrative and operational interfaces using React, TypeScript, Next.js, and TailwindCSS, following best practices in componentization, responsiveness, and version control.",
           texto2:
-              "I’m responsible for developing registration screens for participants and partner companies, replacing manual forms with a modern, automated digital experience. I also create administrative dashboards for managing lectures and workshops, featuring complete functionality for creating, editing, deleting, and filtering events — as well as a user management interface for viewing, assigning, and converting immersion and extension program participants.",
+              "I was responsible for developing the registration screens for participants and companies, replacing manual forms with a modern and automated digital experience. I also built administrative dashboards for managing workshops and lectures, with full features for creating, editing, deleting, and filtering events, as well as a user management screen for viewing, assigning, and converting immersion and extension participants.",
           texto3:
-              "Throughout the project, I actively participate in agile ceremonies such as daily meetings, sprint plannings, and reviews, collaborating closely with the team to ensure continuous delivery of new features and ongoing platform improvements.",          
+              "Throughout the project, I actively participated in Agile ceremonies such as daily meetings, plannings, and reviews, collaborating with the team to ensure continuous delivery of features and ongoing platform improvement.",          
         },
       formacao: {
           titulo: "Education",
