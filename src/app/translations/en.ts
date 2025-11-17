@@ -91,8 +91,5 @@ export const en = {
       maxCaracteres: "Maximum number of characters reached",
       mensagemObrigatoria: "Message is required",
     },
-  },
-
-
-    
+  },  
 };

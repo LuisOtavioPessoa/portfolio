@@ -41,7 +41,6 @@ export default function CardProjetos({
     hover:bg-[#27274266] hover:scale-105
     transition-transform duration-300 ease-out
 
-    /* 📱 Ajustes responsivos */
     max-lg:w-[330px] max-lg:h-[580px]
     max-md:w-[300px] max-md:h-[520px]
     max-sm:w-[260px] max-sm:h-[470px]
@@ -142,7 +141,6 @@ export default function CardProjetos({
     </p>
   </div>
 </div>
-
 
       <ModalCardProjetos
         isOpen={isModalOpen}

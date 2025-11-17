@@ -92,6 +92,4 @@ export const pt = {
       mensagemObrigatoria: "Mensagem obrigatória",
     },
   }
-
-
 }; 

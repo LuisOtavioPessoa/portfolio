@@ -257,15 +257,15 @@ async function onSubmit(data: FormData) {
         />
         </div>
 
-  <div className="w-3/4 flex justify-start 
-                  max-lg:justify-center">
-    <SecaoSobre section="experiencia" height={580} />
-  </div>
+        <div className="w-3/4 flex justify-start 
+                        max-lg:justify-center">
+          <SecaoSobre section="experiencia" height={580} />
+        </div>
 
-  <div className="w-3/4 flex justify-start 
-                  max-lg:justify-center">
-    <SecaoSobre section="formacao" height={260} />
-  </div>
+        <div className="w-3/4 flex justify-start 
+                        max-lg:justify-center">
+          <SecaoSobre section="formacao" height={260} />
+        </div>
 
       </div>
 
@@ -273,7 +273,9 @@ async function onSubmit(data: FormData) {
         id="habilidades" 
         className="w-full min-h-screen bg-transparent flex flex-col items-center pt-24 sm:pt-28 md:pt-32 lg:pt-40">
         <h1 className=" text-white text-[40px] font-altone font-bold 
-max-lg:text-[34px] max-md:text-[30px] max-sm:text-[26px] ">{t.habilidades.titulo}</h1>
+                          max-lg:text-[34px] max-md:text-[30px] max-sm:text-[26px] ">
+          {t.habilidades.titulo}
+        </h1>
 
         <div className="bg-primary-6 h-[5px] w-1/5 rounded-[5px] mt-3 "></div>
 
@@ -339,8 +341,7 @@ max-lg:text-[34px] max-md:text-[30px] max-sm:text-[26px] ">{t.habilidades.titulo
         <h1 className=" text-white text-[40px] font-altone font-bold ">{t.projetos.tituloSecao}</h1>
         <div className="bg-primary-6 h-[5px] w-1/5 rounded-[5px] mt-3 "></div>
 
-        <div className="flex justify-center w-full mt-20 gap-20
-      max-sm:flex-col max-sm:items-center">
+        <div className="flex justify-center w-full mt-20 gap-20 max-sm:flex-col max-sm:items-center">
           <CardProjetos
              titulo={t.projetos.lista[0].titulo}
               descricao={t.projetos.lista[0].descricao} 

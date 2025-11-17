@@ -3,12 +3,10 @@ import { useEffect } from "react";
 
 export default function ParticlesBackground() {
   useEffect(() => {
-    // Garante que só rode no client
     if (typeof window === "undefined") return;
 
-    // Adiciona o script do particles.js dinamicamente
     const script = document.createElement("script");
-    script.src = "/particles/particles.min.js"; // Você precisa ter o arquivo particles.min.js na pasta public/particles
+    script.src = "/particles/particles.min.js"; 
     script.async = true;
     script.onload = () => {
       if (window.particlesJS?.load) {
@@ -22,7 +20,6 @@ export default function ParticlesBackground() {
     script.onerror = () => console.error("Falha ao carregar particles.js");
     document.body.appendChild(script);
 
-    // Cleanup
     return () => {
       document.body.removeChild(script);
     };
