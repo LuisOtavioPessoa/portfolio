@@ -48,6 +48,8 @@ interface Translations {
     tecnologia: string;
     tecnologia2: string;
     lista: ProjetoData[];
+    projeto: string;
+    codigo: string;
   };
 
   

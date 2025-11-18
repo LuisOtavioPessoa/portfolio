@@ -57,7 +57,7 @@ export const pt = {
                 titulo: "Plataforma F360",
                 descricao: [
                     "Aplicação web desenvolvida para estruturar e modernizar a gestão da Fábrica de Software da Unipê.",
-                    "A solução oferece controle administrativo completo sobre alunos, projetos, workshops, palestras e imersões, substituindo processos manuais e descentralizados."
+                    "A solução oferece controle administrativo completo sobre alunos, projetos, workshops, palestras e imersões, substituindo processos manuais e descentralizados.",    
                 ]
             },
             {
@@ -67,8 +67,11 @@ export const pt = {
                     "O projeto demonstra domínio em consumo de APIs RESTful, manipulação dinâmica de dados e criação de interfaces interativas com foco na experiência do usuário."
                 ]
             }
-        ]
+        ],
+        projeto: "Ver Projeto",
+        codigo: "Código Fonte"
     },
+
     habilidades: {
         titulo: "Habilidades",
         cards: {

@@ -16,6 +16,10 @@ interface CardProjetosProps {
   quantidadeTecnologia: string;
   subtitulo: string;
   subtitulo2: string;
+  linkProjeto: string;
+  linkCodigo: string;
+  textoProjeto: string; 
+  textoCodigo: string;
 }
 
 export default function CardProjetos({
@@ -25,7 +29,11 @@ export default function CardProjetos({
   tecnologias,
   quantidadeTecnologia,
  subtitulo,
- subtitulo2
+ subtitulo2,
+  linkProjeto,
+  linkCodigo,
+  textoProjeto,
+  textoCodigo
 }: CardProjetosProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -150,6 +158,10 @@ export default function CardProjetos({
         imagem={imagem}
         tecnologias={tecnologias}
         subtitulo2={subtitulo2}
+        linkProjeto={linkProjeto}
+        linkCodigo={linkCodigo}
+        textoProjeto={textoProjeto}
+        textoCodigo={textoCodigo}
       />
     </>
   );

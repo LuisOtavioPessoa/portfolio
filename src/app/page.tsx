@@ -355,6 +355,10 @@ async function onSubmit(data: FormData) {
              quantidadeTecnologia="2"
              subtitulo={t.projetos.tecnologia}
              subtitulo2={t.projetos.tecnologia2}
+             linkProjeto="https://f360.extensao-fs.com.br/"
+             linkCodigo="https://gitlab.com/repositoriodafabrica/ex2025_1_f360_walace"
+             textoProjeto={t.projetos.projeto}
+             textoCodigo={t.projetos.codigo}             
           />
          
           <CardProjetos
@@ -372,6 +376,10 @@ async function onSubmit(data: FormData) {
              quantidadeTecnologia="4"
              subtitulo= {t.projetos.tecnologia}
              subtitulo2={t.projetos.tecnologia2}
+             linkProjeto="https://api-pokemontcg.vercel.app/"
+             linkCodigo="https://github.com/LuisOtavioPessoa/workshop-frontend-2025.1"
+             textoProjeto={t.projetos.projeto}
+             textoCodigo={t.projetos.codigo}
           />
 
         </div>

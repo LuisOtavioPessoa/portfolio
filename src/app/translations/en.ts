@@ -67,7 +67,9 @@ export const en = {
                     "The project demonstrates mastery in consuming RESTful APIs, dynamic data manipulation, and creating interactive interfaces focused on user experience."
                 ]
             }
-        ]
+        ],
+        projeto: "View Project",
+        codigo: "Source Code"
     },
     habilidades: {
         titulo: "Skills",
