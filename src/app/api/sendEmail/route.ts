@@ -18,6 +18,7 @@ export async function POST(req: Request) {
       from: "Seu Site <no-reply@resend.dev>",
       to: "otaviopessoa999@gmail.com",
       subject: assunto, 
+      replyTo: email,
       html: `
         <h2>Novo contato do site</h2>
         <p><strong>Nome:</strong> ${nome}</p>
