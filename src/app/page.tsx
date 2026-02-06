@@ -361,26 +361,7 @@ async function onSubmit(data: FormData) {
              textoCodigo={t.projetos.codigo}             
           />
          
-          <CardProjetos
-             titulo={t.projetos.lista[1].titulo}
-             descricao={t.projetos.lista[1].descricao}
-             imagem="/images/pokemonapi-projeto.png"
-             tecnologias={[
-              {nome: "React.js", cor: "#5DE1EA1F", borda: "border-[#5DE1EAE5]" },
-              {nome: "Next.js", cor: "#D9D9D91A", borda: "border-[#D9D9D9E5]" },
-              {nome: "Javascript", cor: "#FFE7301A", borda: "border-[#FFE730E5]" },
-              {nome: "Typescript", cor: "#5B51F31A", borda: "border-[#5B51F3E5]" },
-              {nome: "TailwindCSS", cor: "#00ACC11A", borda: "border-[#00ACC1E5]" },
-              {nome: "API RESTful", cor: "#54B5F21A", borda: "border-[#54B5F2E5]" },
-             ]}
-             quantidadeTecnologia="4"
-             subtitulo= {t.projetos.tecnologia}
-             subtitulo2={t.projetos.tecnologia2}
-             linkProjeto="https://api-pokemontcg.vercel.app/"
-             linkCodigo="https://github.com/LuisOtavioPessoa/workshop-frontend-2025.1"
-             textoProjeto={t.projetos.projeto}
-             textoCodigo={t.projetos.codigo}
-          />
+  
 
         </div>
       </div>
