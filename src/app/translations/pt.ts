@@ -19,25 +19,23 @@ export const pt = {
         apresentacao: {
             titulo: "Apresentação",
             texto1: 
-                "Olá! Meu nome é Luís Otávio e sou desenvolvedor front-end apaixonado por tecnologia e inovação. Trabalho no desenvolvimento de soluções completas, do front ao back-end, utilizando stacks modernas para criar sistemas robustos, eficientes e escaláveis.",
+                "Desenvolvedor Front-End com foco em React, Next.js e TypeScript, especializado na construção de interfaces escaláveis, dashboards administrativos e sistemas orientados a dados.",
             texto2: 
-                "Tenho experiência com Next.js, React, TypeScript e Node.js, além de integrações de APIs, automação de processos e criação de painéis administrativos de gerenciamento. No Front-End, busco desenvolver interfaces modernas, responsivas e acessíveis, transformando experiências digitais em algo intuitivo e agradável, que conecta pessoas e marcas.",
+                "Atuei no desenvolvimento de uma plataforma que impactou mais de 500 usuários, automatizando processos e reduzindo significativamente erros operacionais. Tenho experiência com integração de APIs REST, gerenciamento de estado global (Zustand), formulários validados com React Hook Form + Zod e visualização de dados com gráficos interativos.",
             texto3:
-                "Embora meu foco principal seja o Front-End, também possuo experiência com o Back-End, aplicando boas práticas de segurança, versionamento e integração de APIs, garantindo desempenho e confiabilidade.",
-            texto4:
-                "Meu objetivo é criar soluções que otimizem processos, aumentem a produtividade e gerem resultados reais para empresas e pessoas. Sou movido por desafios e aprendizado constante, sempre focado em transformar tecnologia em valor."
+                "Embora meu foco seja o Front-End, também atuo com Node.js para garantir integrações sólidas e eficientes. Desenvolvo soluções performáticas, intuitivas e orientadas a resultado, unindo organização de código e visão de produto.",
         },
         experiencia: {
             titulo: "Experiência profissional",
             subtitulo: "Desenvolvedor Front End",
             subtitulo2: "Estágio Fábrica de Software",
-            tempoExperiencia: "Março 2025 - Agosto 2025",
+            tempoExperiencia: "Março 2025 - Dezembro 2025",
             texto1: 
-                "Atuei no desenvolvimento da Plataforma F360, uma aplicação web criada para modernizar e centralizar a gestão da Fábrica de Software da Unipê, atendendo alunos, instrutores, empresas parceiras e administradores. Trabalhei principalmente no Front-End, desenvolvendo interfaces administrativas e operacionais com React, TypeScript, Next.js e TailwindCSS, seguindo boas práticas de componentização, responsividade e versionamento.",
+                "Atuei no desenvolvimento da Plataforma F360, uma aplicação web criada para centralizar a gestão da Fábrica de Software da Unipê. Trabalhei principalmente no Front-End com React, Next.js, TypeScript e TailwindCSS, desenvolvendo interfaces administrativas e operacionais com foco em componentização, responsividade e organização de código.",
             texto2: 
-                "Fui responsável pela criação das telas de cadastro de participantes e empresas, substituindo formulários manuais por uma experiência digital moderna e automatizada. Também desenvolvi painéis administrativos de gerenciamento de palestras e workshops, com recursos completos de criação, edição, exclusão e filtragem de eventos, além de uma tela de controle de usuários para visualização, alocação e conversão de imersionistas e extensionistas.",
+                "Participei da construção de módulos de cadastro digital de participantes e empresas, substituindo formulários manuais e reduzindo em mais de 80% os erros operacionais. Também desenvolvi painéis administrativos de eventos com funcionalidades completas de CRUD e filtros avançados, contribuindo para a organização de mais de 20 workshops e palestras por semestre, além do módulo de gerenciamento de usuários, que reduziu falhas de distribuição em até 60%.",
            texto3: 
-                "Durante o projeto, participei ativamente das cerimônias ágeis, como dailies, plannings e reviews, colaborando com a equipe para garantir a entrega contínua de funcionalidades e o aprimoramento da plataforma."
+                "Atuei em ambiente ágil, participando de dailies, plannings e reviews, colaborando na entrega contínua e evolução da plataforma."
         },
         formacao: {
             titulo: "Formação",
@@ -61,10 +59,10 @@ export const pt = {
                 ]
             },
             {
-                titulo: "API Pokémon TCG",
+                titulo: "RWA Bank | Agro + Web3",
                 descricao: [
-                    "Aplicação web que consome dados da API oficial do Pokémon TCG para exibir cartas, realizar buscas por nome ou tipo, e simular a abertura de pacotes com 6 cartas aleatórias.",
-                    "O projeto demonstra domínio em consumo de APIs RESTful, manipulação dinâmica de dados e criação de interfaces interativas com foco na experiência do usuário."
+                    `Aplicação web desenvolvida como teste técnico para simular um banco digital focado em investimentos em RWA (Real World Assets) do setor agro.`,
+                    "A solução inclui dashboard financeiro, portfólio de ativos tokenizados, histórico de transações com filtros e fluxo completo de nova operação com validação de formulários e gerenciamento de estado global."
                 ]
             }
         ],

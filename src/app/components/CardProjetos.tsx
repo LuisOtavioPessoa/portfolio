@@ -20,6 +20,7 @@ interface CardProjetosProps {
   linkCodigo: string;
   textoProjeto: string; 
   textoCodigo: string;
+  animarImagem?: boolean;
 }
 
 export default function CardProjetos({
@@ -33,7 +34,8 @@ export default function CardProjetos({
   linkProjeto,
   linkCodigo,
   textoProjeto,
-  textoCodigo
+  textoCodigo,
+  animarImagem = true
 }: CardProjetosProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -65,7 +67,10 @@ export default function CardProjetos({
     <img
       src={imagem}
       alt={titulo}
-      className="w-full h-auto min-h-[230px] transition-transform duration-[3s] ease-in-out group-hover:-translate-y-1/3"
+      className={`
+        w-full h-auto min-h-[230px]
+        ${animarImagem ? "transition-transform duration-[3s] ease-in-out group-hover:-translate-y-1/3" : ""}
+      `}
     />
   </div>
 
@@ -162,6 +167,7 @@ export default function CardProjetos({
         linkCodigo={linkCodigo}
         textoProjeto={textoProjeto}
         textoCodigo={textoCodigo}
+        animarImagem={animarImagem}
       />
     </>
   );

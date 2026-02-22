@@ -19,25 +19,23 @@ export const en = {
       apresentacao: {
         titulo: "Introduction",
           texto1:
-              "Hello! My name is Luís Otávio, and I’m a Front-End Developer passionate about technology, design, and innovation. I build end-to-end digital solutions , from front to back , using modern stacks to deliver robust, efficient, and scalable systems.",
+              "Front-End Developer focused on React, Next.js, and TypeScript, specialized in building scalable interfaces, administrative dashboards, and data-driven systems.",
           texto2:
-              "I have solid experience with Next.js, React, TypeScript, and Node.js, along with API integrations, process automation, and the development of administrative dashboards. On the front-end, my focus is on crafting modern, responsive, and accessible interfaces that transform digital experiences into something intuitive, engaging, and meaningful , connecting people and brands seamlessly.",
+              "I contributed to the development of a platform that impacted over 500 users, automating processes and significantly reducing operational errors. I have experience with REST API integration, global state management (Zustand), form validation using React Hook Form + Zod, and data visualization with interactive charts.",
           texto3:
-              "While my main expertise lies in front-end development, I also work confidently on the back-end, applying best practices in security, version control, and API design to ensure performance and reliability.",
-          texto4:
-              "My mission is to create solutions that optimize workflows, boost productivity, and generate real value for businesses and users alike. I’m driven by challenges, continuous learning, and a genuine passion for turning technology into impactful results.",
+              "Although my main focus is Front-End development, I also work with Node.js to ensure solid and efficient integrations. I build high-performance, intuitive, and results-driven solutions, combining clean code organization with product-oriented thinking.",
         },
       experiencia: {
           titulo: "Professional Experience",
           subtitulo: "Front-End Developer",
           subtitulo2: "Internship at a Fábrica de Software",
-          tempoExperiencia: "March 2025 - August 2025",
+          tempoExperiencia: "March 2025 - December 2025",
           texto1:
-              "I worked on the development of the F360 Platform, a web application created to modernize and centralize the management of Unipê’s Software Factory, serving students, instructors, partner companies, and administrators. I focused primarily on Front-End development, building administrative and operational interfaces using React, TypeScript, Next.js, and TailwindCSS, following best practices in componentization, responsiveness, and version control.",
+              "I contributed to the development of Plataforma F360, a web application created to centralize the management of the Software Factory at Unipê. I worked primarily on the Front-End using React, Next.js, TypeScript, and TailwindCSS, building administrative and operational interfaces with a strong focus on componentization, responsiveness, and clean code organization.",
           texto2:
-              "I was responsible for developing the registration screens for participants and companies, replacing manual forms with a modern and automated digital experience. I also built administrative dashboards for managing workshops and lectures, with full features for creating, editing, deleting, and filtering events, as well as a user management screen for viewing, assigning, and converting immersion and extension participants.",
+              "I participated in the development of digital registration modules for participants and partner companies, replacing manual forms and reducing operational errors by over 80%. I also built administrative event dashboards with full CRUD functionality and advanced filtering, supporting the organization of more than 20 workshops and lectures per semester, as well as a user management module that reduced allocation errors by up to 60%.",
           texto3:
-              "Throughout the project, I actively participated in Agile ceremonies such as daily meetings, plannings, and reviews, collaborating with the team to ensure continuous delivery of features and ongoing platform improvement.",          
+              "I worked in an agile environment, actively participating in daily meetings, sprint plannings, and reviews, contributing to continuous delivery and platform improvements.",          
         },
       formacao: {
           titulo: "Education",
@@ -61,10 +59,10 @@ export const en = {
                 ]
             },
             {
-                titulo: "Pokémon TCG API",
+                titulo: "RWA Bank | Agro + Web3",
                 descricao: [
-                    "Web application that consumes data from the official Pokémon TCG API to display cards, perform searches by name or type, and simulate opening packs with 6 random cards.",
-                    "The project demonstrates mastery in consuming RESTful APIs, dynamic data manipulation, and creating interactive interfaces focused on user experience."
+                    "Web application developed as a technical challenge to simulate a modern digital bank focused on RWA (Real World Assets) investments in the agribusiness sector.",
+                    "The solution includes a financial dashboard, tokenized asset portfolio, transaction history with filters, and a complete new operation flow with form validation and global state management."
                 ]
             }
         ],

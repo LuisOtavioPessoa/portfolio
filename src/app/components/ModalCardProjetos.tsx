@@ -19,6 +19,7 @@ interface ModalCardProjetosProps {
   linkCodigo: string;
   textoProjeto: string; 
   textoCodigo: string;
+  animarImagem?: boolean;
 }
 
 export default function ModalCardProjetos({
@@ -33,6 +34,7 @@ export default function ModalCardProjetos({
   linkCodigo,
   textoProjeto, 
   textoCodigo,
+  animarImagem = true
 }: ModalCardProjetosProps) {
   if (!isOpen) return null;
 
@@ -77,7 +79,13 @@ export default function ModalCardProjetos({
               <img
                 src={imagem}
                 alt={titulo}
-                className="w-full h-auto min-h-[250px] transition-transform duration-[3s] ease-in-out group-hover:-translate-y-1/3 max-lg:min-h-[220px] max-md:min-h-[200px] max-sm:min-h-[180px]"
+                className={`
+                  w-full h-auto min-h-[250px]
+                  max-lg:min-h-[220px]
+                  max-md:min-h-[200px]
+                  max-sm:min-h-[180px]
+                  ${animarImagem ? "transition-transform duration-[3s] ease-in-out group-hover:-translate-y-1/3" : ""}
+                `}
               />
             </div>
 

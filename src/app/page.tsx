@@ -253,13 +253,13 @@ async function onSubmit(data: FormData) {
                         max-lg:justify-center max-lg:mt-14 max-md:mt-10 max-sm:mt-8 max-sm:justify-center">
         <SecaoSobre
           section="apresentacao"
-          height={530}
+          height={360}
         />
         </div>
 
         <div className="w-3/4 flex justify-start 
                         max-lg:justify-center">
-          <SecaoSobre section="experiencia" height={580} />
+          <SecaoSobre section="experiencia" height={540} />
         </div>
 
         <div className="w-3/4 flex justify-start 
@@ -344,8 +344,9 @@ async function onSubmit(data: FormData) {
         <div className="flex justify-center w-full mt-20 gap-20 max-sm:flex-col max-sm:items-center">
           <CardProjetos
              titulo={t.projetos.lista[0].titulo}
-              descricao={t.projetos.lista[0].descricao} 
+             descricao={t.projetos.lista[0].descricao} 
              imagem="/images/f360-projeto.png"
+             animarImagem = {true}
              tecnologias={[
               {nome: "React.js", cor: "#5DE1EA1F", borda: "border-[#5DE1EAE5]"},
               {nome: "Typescript", cor: "#5B51F31A", borda: "border-[#5B51F3E5]"},
@@ -360,9 +361,27 @@ async function onSubmit(data: FormData) {
              textoProjeto={t.projetos.projeto}
              textoCodigo={t.projetos.codigo}             
           />
-         
-  
 
+          <CardProjetos
+             titulo={t.projetos.lista[1].titulo}
+             descricao={t.projetos.lista[1].descricao} 
+             imagem="/images/rwa-bank-agro-projeto.png"
+             animarImagem = {false}
+             tecnologias={[
+              {nome: "React.js", cor: "#5DE1EA1F", borda: "border-[#5DE1EAE5]"},
+              {nome: "Typescript", cor: "#5B51F31A", borda: "border-[#5B51F3E5]"},
+              {nome: "Next.js", cor: "#D9D9D91A", borda: "border-[#D9D9D9E5]"},
+              {nome: "Tailwind CSS", cor: "#00ACC11A", borda: "border-[#00ACC1E5]"},
+             ]}
+             quantidadeTecnologia="2"
+             subtitulo={t.projetos.tecnologia}
+             subtitulo2={t.projetos.tecnologia2}
+             linkProjeto="https://rwabank.vercel.app/dashboard"
+             linkCodigo="https://github.com/LuisOtavioPessoa/DesafioFrontEndFeeAgro"
+             textoProjeto={t.projetos.projeto}
+             textoCodigo={t.projetos.codigo}             
+          />
+         
         </div>
       </div>
 
